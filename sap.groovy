@@ -7,7 +7,7 @@ def abap_unit(LABEL,HOST,CREDENTIAL,PACKAGE,COVERAGE) {
 
 	withCredentials([usernamePassword(credentialsId: CREDENTIAL, usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
 		stage('[' + LABEL + '] ABAP Unit') {
-			dir('src') {
+			/*dir('src') {
 				bat "newman run abap_unit_coverage.postman_collection.json --insecure --bail " +
 				"--environment NPL.postman_environment.json " +
 				"--timeout-request 120000 " +
@@ -16,7 +16,7 @@ def abap_unit(LABEL,HOST,CREDENTIAL,PACKAGE,COVERAGE) {
 				"--global-var password=$PASSWORD " +
 				"--global-var package=$PACKAGE " +
 				"--global-var coverage_min=$COVERAGE "
-			}
+			}*/
 		}
 	}
 }
@@ -30,7 +30,7 @@ def abap_sci(LABEL,HOST,CREDENTIAL,PACKAGE,VARIANT) {
 	
 	withCredentials([usernamePassword(credentialsId: CREDENTIAL, usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {	
 		stage('[' + LABEL + '] ABAP Code Inspector') {
-			dir('src') {
+			/*dir('src') {
 					bat "newman run abap_sci.postman_collection.json --insecure --bail " +
 					"--environment NPL.postman_environment.json " +
 					"--timeout-request 120000 " +
@@ -39,7 +39,7 @@ def abap_sci(LABEL,HOST,CREDENTIAL,PACKAGE,VARIANT) {
 					"--global-var password=$PASSWORD " +
 					"--global-var package=$PACKAGE " +
 					"--global-var atc_variant=$VARIANT "
-			}
+			}*/
 		}
 	}
 }
